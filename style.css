@@ -11,4 +11,18 @@ body {
     background-color: gold;
     font-size: 3.6rem;
 }
+nav{
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+
+}
+.hero-text h1{
+    font-size: 36px;
+}
+.header{
+    background-image: url('img/logo.png');
+    height: 400px;
+
+}
 
