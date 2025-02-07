@@ -8,23 +8,91 @@
 body {
     height: 100vh;
     font-family: 'Open Sans', sans-serif;
-    font-size: 3.6rem;
+}
+.wrapper{
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1200px;
+}
+.burger-icon{
+    display: block;
+    margin-left: auto;
+    padding: 0 30px;
+    line-height: 60px;
+    font-size: 30px;
+    background: none;
+    border: none;
+    cursor: pointer;
 }
 nav{
     height: 60px;
     line-height: 60px;
     text-align: center;
+    background-color: gray;
 }
 .nav-items{
-    font-size: 2rem;
-}
-.hero-text h1{
-    font-size: 20px;
-    margin-bottom: 10px;
-    text-align: center;
+    display: none;
 }
 .header{
-    background-image: url('img/logo.png');
-    height: 400px;
-
+    position:relative;
+    background-image: url('img/grass-2616911_640.jpg');
+    height: 330px;
+    background-size: cover;
+    background-position: center;
 }
+.header-photo{
+}
+
+.header-text{
+    color: black;
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.header-text h1 {
+    margin-bottom: 5px;
+    text-shadow: 4px 4px 6px gray;
+    color: black;
+}
+.header-text span{
+    color: black;
+}
+
+@media (min-width: 768px){
+    .burger-icon{
+        display: none;
+    }
+    .nav-items{
+        display: block;
+    }
+    .nav-items a {
+        padding: 0 30px;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-weight: bold;
+        color: #333;
+        transition: color .5s;
+    }
+    .nav-items a:hover {
+        color: #09f;
+        
+    }
+    .hero-text h1{
+        font-size: 36px;
+    }
+    .hero-text p{
+        font-size: 18px;
+    }
+}
+
+@media (min-width: 1200px){
+    .hero-text h1{
+        font-size: 42px;
+
+    }
+    .hero-text p{
+        font-size: 20px;
+    }
+}
+
