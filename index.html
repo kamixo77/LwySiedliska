@@ -7,36 +7,108 @@
     <title>Lwy siedliska</title>
     <link rel="stylesheet" href="style.css">
     <script src="skrypt.js"></script>
+
+    <link rel="shortcut icon"  type="image/x-icon" href="img/logo.jpg.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="fontawesome-free-6.7.2-web/css/all.min.css">
 </head>
 <body>
-<nav>
-    <div class="wrapper">
-        <button class="burger-icon"><i class="fa-solid fa-bars"></i></button>
-        <div class="nav-items">
-            <a href="">Home</a>
-            <a href="">Wiadomosci</a>
-            <a href="">Mecze</a>
-            <a href="">Zawodnicy</a>
-        </div>
+    <header>
+        <h1>Lwy Siedliska</h1>
+        <p>Witamy na oficjalnej stronie naszego klubu!</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#players">Piłkarze</a></li>
+            <li><a href="#news">Wiadomości</a></li>
+            <li><a href="#social">Social Media</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <section id="players">
+            <h2>Piłkarze</h2>
+            <div class="players-grid">
+                <div class="player-card">
+                    <p>#9</p>
+                    <h3>Konrad Dalke</h3>
+                    <p>Napastnik</p>
+                </div>
+                <div class="player-card">
+                    <p>#6</p>
+                    <h3>Radek Byrda</h3>
+                    <p>Obrońca</p>
+                </div>
+                <div class="player-card">
+                    <p>#7</p>
+                    <h3>Kamil Zięba</h3>
+                    <p>Pomocnik</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="news">
+            <h2>Wiadomości</h2>
+            <div class="news-container">
+                <div class="news-item">
+                    <h3>Wysoka porażka naszego klubu!</h3>
+                    <p>30 marca nasza drużyna przegrała swój mecz 5:28 strzelcami naszych bramek byli: Kasowicz x3, Zięba, Igor.</p>
+                </div>
+                <div class="news-item">
+                    <h3>Nowy sponsor</h3>
+                    <p>Ogłaszamy współpracę z firmą "Proszki Buszmenka" na sezon 2025/2026.</p>
+                </div>
+                <div class="news-item">
+                    <h3>Ustalanie spotkań</h3>
+                    <p>Zapraszamy kluby o składanie propozycji o zagranie spotkania.</p>
+                </div>
+                <div class="news-item hidden">
+                    <h3>Nowy nabytek!</h3>
+                    <p>Dołączył do nas nowy zawodnik - Kuba Podolski, znany drybler z Czarni Jasło.</p>
+                </div>
+                <div class="news-item hidden">
+                    <h3>Remis w spotkaniu!</h3>
+                    <p>Remis w cięzkim spotkaniu z PKS Gorajowice zakończony 16:16!</p>
+                </div>
+                <div class="news-item hidden">
+                    <h3>Nowy nabytek!</h3>
+                    <p>Dołączył do nas nowy zawodnik - Karol Wachowski, znany ze swojej nieporadności w defensywie.</p>
+                </div>
+            </div>
+            <button id="show-more">Więcej</button>
+        </section>
+
+        <section id="social">
+            <h2>Social Media</h2>
+            <div class="social-links">
+                <a href="#">Facebook</a>
+                <a href="https://www.instagram.com/fc_lwysiedliska/">Instagram</a>
+                <a href="#">Twitter</a>
+                <a href="#">YouTube</a>
+            </div>
+        </section>
     </div>
-</nav>
-<header>
-    <div class="header"></div>
-    <div class="header-photo"></div>
-    <div class="header-text"><h1>Lwy <span>Siedliska</span></h1></div>
-</header>
-<main>
 
+    <footer>
+        <p>&copy; 2025 Klub Lwy Siedliska. Wszystkie prawa zastrzeżone.</p>
+    </footer>
+    <script>
+        const showMoreButton = document.getElementById('show-more');
+        const hiddenNewsItems = document.querySelectorAll('.news-item.hidden');
 
-
-</main>
-
-<footer></footer>
-
-</body>
-</html>
-
-<footer></footer>
-
+        showMoreButton.addEventListener('click', () => {
+            hiddenNewsItems.forEach(item => {
+                item.classList.remove('hidden');
+            });
+            showMoreButton.style.display = 'none';
+        });
+    </script>
 </body>
 </html>
