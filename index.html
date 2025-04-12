@@ -1,114 +1,181 @@
 <!doctype html>
-<html lang="en">
-
+<html lang="pl">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Lwy siedliska</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="skrypt.js"></script>
-
-    <link rel="shortcut icon"  type="image/x-icon" href="img/logo.jpg.png" />
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="fontawesome-free-6.7.2-web/css/all.min.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lwy Siedliska</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" type="image/x-icon" href="img/logo.jpg.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Raleway:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <h1>Lwy Siedliska</h1>
-        <p>Witamy na oficjalnej stronie naszego klubu!</p>
-    </header>
+  <header>
+    <h1>Lwy Siedliska</h1>
+    <p>Witamy na oficjalnej stronie naszego klubu!</p>
+  </header>
 
-    <nav>
-        <ul>
-            <li><a href="#players">Piłkarze</a></li>
-            <li><a href="#news">Wiadomości</a></li>
-            <li><a href="#social">Social Media</a></li>
-        </ul>
-    </nav>
+  <nav>
+    <ul>
+      <li><a href="#players">Piłkarze</a></li>
+      <li><a href="#news">Wiadomości</a></li>
+      <li><a href="#social">Social Media</a></li>
+    </ul>
+  </nav>
 
-    <div class="container">
-        <section id="players">
-            <h2>Piłkarze</h2>
-            <div class="players-grid">
-                <div class="player-card">
-                    <p>#9</p>
-                    <h3>Konrad Dalke</h3>
-                    <p>Napastnik</p>
-                </div>
-                <div class="player-card">
-                    <p>#6</p>
-                    <h3>Radek Byrda</h3>
-                    <p>Obrońca</p>
-                </div>
-                <div class="player-card">
-                    <p>#7</p>
-                    <h3>Kamil Zięba</h3>
-                    <p>Pomocnik</p>
-                </div>
-            </div>
-        </section>
+  <div class="container">
+    <section id="players">
+      <h2>Piłkarze</h2>
 
-        <section id="news">
-            <h2>Wiadomości</h2>
-            <div class="news-container">
-                <div class="news-item">
-                    <h3>Wysoka porażka naszego klubu!</h3>
-                    <p>30 marca nasza drużyna przegrała swój mecz 5:28 strzelcami naszych bramek byli: Kasowicz x3, Zięba, Igor.</p>
-                </div>
-                <div class="news-item">
-                    <h3>Nowy sponsor</h3>
-                    <p>Ogłaszamy współpracę z firmą "Proszki Buszmenka" na sezon 2025/2026.</p>
-                </div>
-                <div class="news-item">
-                    <h3>Ustalanie spotkań</h3>
-                    <p>Zapraszamy kluby o składanie propozycji o zagranie spotkania.</p>
-                </div>
-                <div class="news-item hidden">
-                    <h3>Nowy nabytek!</h3>
-                    <p>Dołączył do nas nowy zawodnik - Kuba Podolski, znany drybler z Czarni Jasło.</p>
-                </div>
-                <div class="news-item hidden">
-                    <h3>Remis w spotkaniu!</h3>
-                    <p>Remis w cięzkim spotkaniu z PKS Gorajowice zakończony 16:16!</p>
-                </div>
-                <div class="news-item hidden">
-                    <h3>Nowy nabytek!</h3>
-                    <p>Dołączył do nas nowy zawodnik - Karol Wachowski, znany ze swojej nieporadności w defensywie.</p>
-                </div>
-            </div>
-            <button id="show-more">Więcej</button>
-        </section>
+      <!-- Zakładki -->
+      <div class="player-tabs">
+        <button class="tab-button active" data-tab="all">Wszyscy</button>
+        <button class="tab-button" data-tab="obroncy">Obrońcy</button>
+        <button class="tab-button" data-tab="pomocnicy">Pomocnicy</button>
+        <button class="tab-button" data-tab="napastnicy">Napastnicy</button>
+        <button class="tab-button" data-tab="bramkarze">Bramkarze</button>
+      </div>
 
-        <section id="social">
-            <h2>Social Media</h2>
-            <div class="social-links">
-                <a href="#">Facebook</a>
-                <a href="https://www.instagram.com/fc_lwysiedliska/">Instagram</a>
-                <a href="#">Twitter</a>
-                <a href="#">YouTube</a>
-            </div>
-        </section>
-    </div>
+      <!-- Siatka zawodników -->
+      <div class="players-grid">
+        <div class="player-card napastnicy">
+          <p>#18</p>
+          <h3>K.Dalke</h3>
+          <p>Napastnik</p>
+        </div>
 
-    <footer>
-        <p>&copy; 2025 Klub Lwy Siedliska. Wszystkie prawa zastrzeżone.</p>
-    </footer>
-    <script>
-        const showMoreButton = document.getElementById('show-more');
-        const hiddenNewsItems = document.querySelectorAll('.news-item.hidden');
+        <div class="player-card obroncy">
+          <p>#6</p>
+          <h3>R.Byrda</h3>
+          <p>Obrońca</p>
+        </div>
 
-        showMoreButton.addEventListener('click', () => {
-            hiddenNewsItems.forEach(item => {
-                item.classList.remove('hidden');
-            });
-            showMoreButton.style.display = 'none';
-        });
-    </script>
+        <div class="player-card pomocnicy">
+          <p>#7</p>
+          <h3>K.Zięba</h3>
+          <p>Pomocnik</p>
+        </div>
+
+        <div class="player-card napastnicy hidden">
+          <p>#10</p>
+          <h3>K.Podolski</h3>
+          <p>Napastnik</p>
+        </div>
+        <div class="player-card obroncy hidden">
+            <p>#19</p>
+            <h3>A.Pisarczyk</h3>
+            <p>Obrońca</p>
+          </div>
+
+          <div class="player-card napastnicy hidden">
+            <p>#16</p>
+            <h3>W.Pawluś</h3>
+            <p>Napastnik</p>
+          </div>
+          <div class="player-card obroncy hidden">
+            <p>#12</p>
+            <h3>Cafu</h3>
+            <p>Obrońca</p>
+          </div>
+        <div class="player-card napastnicy hidden">
+            <p>#9</p>
+            <h3>B.Ludwin</h3>
+            <p>Napastnik</p>
+          </div>
+
+          <div class="player-card pomocnicy hidden">
+            <p>#13</p>
+            <h3>K.Kasowicz</h3>
+            <p>Pomocnik</p>
+          </div>
+
+        <div class="player-card obroncy hidden">
+          <p>#4</p>
+          <h3>K.Wachowski</h3>
+          <p>Obrońca</p>
+        </div>
+
+        <div class="player-card obroncy hidden">
+            <p>#11</p>
+            <h3>O.Berkowicz</h3>
+            <p>Obrońca</p>
+          </div>
+
+          <div class="player-card napastnicy hidden">
+            <p>#8</p>
+            <h3>Raphinia</h3>
+            <p>Napastnik</p>
+          </div>
+
+        <div class="player-card bramkarze hidden">
+          <p>#1</p>
+          <h3>M.Kołek</h3>
+          <p>Bramkarz</p>
+        </div>
+        <div class="player-card obroncy hidden">
+            <p>#20</p>
+            <h3>K.Kobak</h3>
+            <p>Obrońca</p>
+          </div>
+          <div class="player-card napastnicy hidden">
+            <p>#14</p>
+            <h3>Jamal</h3>
+            <p>Napastnik</p>
+          </div>
+
+        <div class="player-card button-wrapper all">
+          <button id="show-more-player">Więcej</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="news">
+      <h2>Wiadomości</h2>
+      <div class="news-container">
+        <div class="news-item">
+          <h3>Wysoka porażka naszego klubu!</h3>
+          <p>30 marca nasza drużyna przegrała mecz 5:28. Strzelcy: Kasowicz x3, Zięba, Igor.</p>
+        </div>
+        <div class="news-item">
+          <h3>Nowy sponsor</h3>
+          <p>Ogłaszamy współpracę z firmą "Proszki Buszmenka" na sezon 2025/2026.</p>
+        </div>
+        <div class="news-item">
+          <h3>Ustalanie spotkań</h3>
+          <p>Zapraszamy kluby do składania propozycji meczowych.</p>
+        </div>
+        <div class="news-item hidden">
+          <h3>Nowy nabytek!</h3>
+          <p>Dołączył do nas Kuba Podolski – drybler z Czarni Jasło.</p>
+        </div>
+        <div class="news-item hidden">
+          <h3>Remis!</h3>
+          <p>Wyrównany mecz z PKS Gorajowice zakończony 16:16!</p>
+        </div>
+        <div class="news-item hidden">
+          <h3>Nowy zawodnik!</h3>
+          <p>Witamy Karola Wachowskiego – nowy obrońca.</p>
+        </div>
+      </div>
+      <button id="show-more">Więcej</button>
+    </section>
+
+    <section id="social">
+      <h2>Social Media</h2>
+      <div class="social-links">
+        <a href="#">Facebook</a>
+        <a href="https://www.instagram.com/fc_lwysiedliska/">Instagram</a>
+        <a href="#">Twitter</a>
+        <a href="#">YouTube</a>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Klub Lwy Siedliska. Wszystkie prawa zastrzeżone.</p>
+  </footer>
+
+  <script src="skrypt.js"></script>
 </body>
 </html>
