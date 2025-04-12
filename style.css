@@ -1,98 +1,177 @@
-
-*{
-    box-sizing: border-box;
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
 }
 
 body {
-    height: 100vh;
-    font-family: 'Open Sans', sans-serif;
+    background-color: #494949 ;
 }
-.wrapper{
-    margin: 0 auto;
-    width: 100%;
-    max-width: 1200px;
-}
-.burger-icon{
-    display: block;
-    margin-left: auto;
-    padding: 0 30px;
-    line-height: 60px;
-    font-size: 30px;
-    background: none;
-    border: none;
-    cursor: pointer;
-}
-nav{
-    height: 60px;
-    line-height: 60px;
+
+/* Nagłówek */
+header {
+    background-color: #494949;
+    color: white;
     text-align: center;
-    background-color: gray;
+    padding: 2rem;
 }
-.nav-items{
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Nawigacja */
+nav {
+    background-color: #202020;
+    padding: 1rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+nav ul li a:hover {
+    color: #575656;
+}
+
+/* Kontener główny */
+.container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+/* Sekcje */
+section {
+    background-color: white;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+    color: #000000;
+    margin-bottom: 1rem;
+}
+
+/* Piłkarze */
+.players-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.player-card {
+    text-align: center;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.player-card img {
+    width: 100%;
+    max-width: 150px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+}
+
+
+.news-container {
+    display: block; /* Zmiana z flex na block */
+}
+
+.news-item.hidden {
     display: none;
 }
-.header{
-    position:relative;
-    background-image: url('img/grass-2616911_640.jpg');
-    height: 330px;
-    background-size: cover;
-    background-position: center;
-}
-.header-photo{
+
+/* Przycisk "Więcej" */
+#show-more {
+    background-color: #007bff;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: background-color 0.3s ease;
 }
 
-.header-text{
-    color: black;
-    position: absolute;
-    top: 35%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-.header-text h1 {
-    margin-bottom: 5px;
-    text-shadow: 4px 4px 6px gray;
-    color: black;
-}
-.header-text span{
-    color: black;
+#show-more:hover {
+    background-color: #0056b3;
 }
 
-@media (min-width: 768px){
-    .burger-icon{
-        display: none;
-    }
-    .nav-items{
-        display: block;
-    }
-    .nav-items a {
-        padding: 0 30px;
-        text-decoration: none;
-        text-transform: uppercase;
-        font-weight: bold;
-        color: #333;
-        transition: color .5s;
-    }
-    .nav-items a:hover {
-        color: #09f;
-        
-    }
-    .hero-text h1{
-        font-size: 36px;
-    }
-    .hero-text p{
-        font-size: 18px;
-    }
+/* Wiadomości */
+.news-item {
+    border-bottom: 1px solid #ddd;
+    padding: 1rem 0;
 }
 
-@media (min-width: 1200px){
-    .hero-text h1{
-        font-size: 42px;
-
-    }
-    .hero-text p{
-        font-size: 20px;
-    }
+.news-item:last-child {
+    border-bottom: none;
 }
 
+/* Social Media */
+.social-links {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.social-links a {
+    color: #000000;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+.social-links a:hover {
+    color: #575656;
+}
+
+/* Stopka */
+footer {
+    background-color: #202020;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Responsywność */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    nav ul li a {
+        font-size: 1rem;
+    }
+
+    .players-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .container {
+        margin: 1rem;
+        padding: 0 0.5rem;
+    }
+}
