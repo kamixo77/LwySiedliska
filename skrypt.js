@@ -79,3 +79,13 @@ showMoreNewsBtn.addEventListener('click', () => {
   });
   showMoreNewsBtn.style.display = 'none';
 });
+
+// Obsługa przycisku "Więcej" wyników
+const showMoreResultsBtn = document.getElementById('show-more-results');
+
+showMoreResultsBtn.addEventListener('click', () => {
+  document.querySelectorAll('.match-result.hidden').forEach(item => {
+    item.classList.remove('hidden');
+  });
+  showMoreResultsBtn.style.display = 'none';
+});
