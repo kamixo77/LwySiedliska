@@ -89,3 +89,49 @@ showMoreResultsBtn.addEventListener('click', () => {
   });
   showMoreResultsBtn.style.display = 'none';
 });
+
+// Dodajemy efekt podświetlenia na szaro
+playerCards.forEach(card => {
+  card.addEventListener('mouseover', () => {
+    card.style.backgroundColor = '#d3d3d3'; // szary kolor
+  });
+
+  card.addEventListener('mouseout', () => {
+    card.style.backgroundColor = '#f9f9f9'; // przywrócenie oryginalnego koloru
+  });
+});
+
+
+// Elementy
+const playerStatsWindow = document.createElement('div'); // Tworzymy okno na statystyki
+playerStatsWindow.id = 'player-stats';
+document.body.appendChild(playerStatsWindow);
+
+// Funkcja wyświetlająca statystyki zawodnika
+function showPlayerStats(stats) {
+  playerStatsWindow.innerHTML = `
+    <h2>Statystyki</h2>
+    <p><strong>Gole:</strong> ${stats.gole}</p>
+    <p><strong>Mecze:</strong> ${stats.mecze}</p>
+    <button id="close-stats">Zamknij</button>
+  `;
+  playerStatsWindow.style.display = 'block';
+
+  // Obsługa zamknięcia okna ze statystykami
+  document.getElementById('close-stats').addEventListener('click', () => {
+    playerStatsWindow.style.display = 'none';
+  });
+}
+
+// Obsługa kliknięcia na zawodnika
+playerCards.forEach(card => {
+  card.addEventListener('click', () => {
+    const stats = card.getAttribute('data-stats').split('; ').reduce((acc, stat) => {
+      const [key, value] = stat.split(': ');
+      acc[key] = value;
+      return acc;
+    }, {});
+
+    showPlayerStats(stats);
+  });
+});
