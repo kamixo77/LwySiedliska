@@ -1,118 +1,152 @@
+:root {
+  --main-bg: #494949;
+  --nav-bg: #202020;
+  --highlight: #007bff;
+  --highlight-hover: #0056b3;
+  --light-bg: #f9f9f9;
+  --text-light: white;
+  --text-dark: #000;
+  --hover-dark: #333;
+}
+
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
 
-  body {
-    background-color: #494949;
-  }
+body {
+  background-color: var(--main-bg);
+}
 
-  header {
-    background-color: #494949;
-    color: white;
-    text-align: center;
-    padding: 2rem;
-  }
+/* Logo w lewym i prawym górnym rogu */
+.logo-left, .logo-right {
+  position: absolute;
+  top: 10px;  
+  width: 100px;  
+  height: auto;
+  z-index: 10;  
+}
 
-  header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-  }
+.logo-left {
+  left: 10px;  
+}
 
-  nav {
-    background-color: #202020;
-    padding: 1rem;
-  }
+.logo-right {
+  right: 10px;  
+}
 
-  nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-  }
+header {
+  background-color: var(--main-bg);
+  color: var(--text-light);
+  text-align: center;
+  padding: 2rem;
+}
 
-  nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 1.2rem;
-  }
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
 
-  nav ul li a:hover {
-    color: #575656;
-  }
+nav {
+  background-color: var(--nav-bg);
+  padding: 1rem;
+}
 
-  .container {
-    max-width: 1200px;
-    margin: 2rem auto;
-    padding: 0 1rem;
-  }
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
 
-  section {
-    background-color: white;
-    padding: 2rem;
-    margin-bottom: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  }
+nav ul li a {
+  color: var(--text-light);
+  text-decoration: none;
+  font-size: 1.2rem;
+}
 
-  section h2 {
-    color: #000000;
-    margin-bottom: 1rem;
-  }
+nav ul li a:hover {
+  color: #575656;
+}
 
-  /* Zakładki */
-  .player-tabs {
-    display: flex;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
-    flex-wrap: wrap;
-  }
+.container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
 
-  .tab-button {
-    padding: 0.5rem 1rem;
-    background-color: #e0e0e0;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
+section {
+  background-color: var(--text-light);
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
 
-  .tab-button:hover,
-  .tab-button.active {
-    background-color: #007bff;
-    color: white;
-  }
+section h2 {
+  color: var(--text-dark);
+  margin-bottom: 1rem;
+}
 
+/* Zakładki */
+.player-tabs {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
 
-  /*section zawodnicy */
-  .players-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-  }
+.tab-button {
+  padding: 0.5rem 1rem;
+  background-color: #e0e0e0;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
 
-  .player-card {
-    text-align: center;
-    padding: 1rem;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    background-color: #f9f9f9;
-  }
-  .player-card:hover {
-    background-color: #333333; /* szare podświetlenie */
-    transition: background-color 0.3s ease;
-  }
+.tab-button:hover,
+.tab-button.active {
+  background-color: var(--highlight);
+  color: var(--text-light);
+}
 
-  /* Styl dla okna ze statystykami */
+/* Zawodnicy */
+.players-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Zawodnicy */
+.player-card {
+  text-align: center;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: var(--light-bg);
+  color: var(--text-dark);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.player-card:hover {
+  background-color: #0f0f0f2c; /* Szary kolor tła */
+  color: #000; /* Czarny kolor tekstu */
+}
+
+/* Statystyki popup */
+/* Zawodnicy */
+/* Statystyki popup */
 #player-stats {
-  display: none; /* Domyślnie ukryte */
+  display: none;
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: white;
+  background-color: var(--text-light);
   padding: 2rem;
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
@@ -129,153 +163,195 @@
   font-size: 1.2rem;
 }
 
-#player-stats button {
-  background-color: #007bff;
-  color: white;
-  padding: 0.5rem 1rem;
+
+#player-stats button,
+#show-more,
+#show-more-results,
+#show-more-player {
+  background-color: var(--highlight);
+  color: var(--text-light);
+  padding: 0.8rem 1.5rem;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   margin-top: 1rem;
+  transition: background-color 0.3s ease;
 }
 
-#player-stats button:hover {
-  background-color: #0056b3;
+#player-stats button:hover,
+#show-more:hover,
+#show-more-results:hover,
+#show-more-player:hover {
+  background-color: var(--highlight-hover);
 }
 
-  .hidden {
-    display: none;
+.hidden {
+  display: none;
+}
+
+.button-wrapper {
+  border: none;
+  box-shadow: none;
+  text-align: center;
+  background: none;
+}
+
+/* Wiadomości */
+.news-container {
+  display: block;
+}
+
+.news-item {
+  border-bottom: 1px solid #ddd;
+  padding: 1rem 0;
+}
+
+.news-item:last-child {
+  border-bottom: none;
+}
+
+/* Wyniki */
+#results {
+  margin-bottom: 3rem; /* Zwiększony margines dolny */
+}
+
+
+.results-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.match-result {
+  text-align: center;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: var(--light-bg);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  position: relative;
+  overflow: hidden; /* Zapobiega wychodzeniu elementu poza kontener */
+  margin: 0.5rem; /* Dodanie marginesu, aby element nie dotykał krawędzi */
+}
+
+.match-result:hover {
+  transform: scale(1.03); /* Delikatne powiększenie */
+  background-color: #f0f0f0; /* Zmiana tła po najechaniu */
+  transform-origin: center center; /* Ustawienie punktu powiększenia w środku */
+}
+
+.results-heading {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.match-result.win {
+  background-color: #d4edda; /* delikatna zieleń */
+  border-left: 5px solid green;
+}
+
+.match-result.draw {
+  background-color: #fff3cd; /* delikatny żółty */
+  border-left: 5px solid orange;
+}
+
+.match-result.loss {
+  background-color: #f8d7da; /* delikatny czerwony */
+  border-left: 5px solid red;
+}
+
+.team-form {
+  display: flex;
+  gap: 0.3rem;
+  font-size: 1.1rem;
+}
+
+.form-letter {
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-weight: bold;
+  color: white;
+}
+
+.form-letter.win {
+  background-color: green;
+}
+
+.form-letter.draw {
+  background-color: orange;
+}
+
+.form-letter.loss {
+  background-color: red;
+}
+
+/* Opis meczu */
+.match-description {
+  display: none; /* Ukrycie opisu domyślnie */
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  color: #555;
+}
+
+.match-result:hover .match-description {
+  display: block; /* Pokazanie opisu po najechaniu */
+}
+
+/* Social Media */
+.social-links {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+#social {
+  margin-top: 5rem; /* Zwiększony margines górny */
+}
+
+.social-links a {
+  color: var(--text-dark);
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+
+.social-links a:hover {
+  color: #575656;
+}
+
+/* Stopka */
+footer {
+  background-color: var(--nav-bg);
+  color: var(--text-light);
+  text-align: center;
+  padding: 1rem;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 1.8rem;
   }
 
-  .button-wrapper {
-    border: none;
-    box-shadow: none;
-    text-align: center;
-    background: none;
-  }
-
-  #show-more-player {
-    background-color: #007bff;
-    color: white;
-    padding: 0.8rem 1.5rem;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 1rem;
-    transition: background-color 0.3s ease;
-  }
-
-  #show-more-player:hover {
-    background-color: #0056b3;
-  }
-
-  /*section wiadomosci */
-  .news-container {
-    display: block;
-  }
-
-  .news-item {
-    border-bottom: 1px solid #ddd;
-    padding: 1rem 0;
-  }
-
-  .news-item:last-child {
-    border-bottom: none;
-  }
-
-  .news-item.hidden {
-    display: none;
-  }
-
-  #show-more {
-    background-color: #007bff;
-    color: white;
-    padding: 0.8rem 1.5rem;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 1rem;
-    transition: background-color 0.3s ease;
-  }
-
-  #show-more:hover {
-    background-color: #0056b3;
-  }
-
-  .social-links {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-  }
-
-  .social-links a {
-    color: #000000;
-    text-decoration: none;
-    font-size: 1.1rem;
-  }
-
-  .social-links a:hover {
-    color: #575656;
-  }
-  .results-container {
-    display: flex;
+  nav ul {
     flex-direction: column;
+    text-align: center;
     gap: 1rem;
   }
-  .match-result {
-    text-align: center;
-    padding: 1rem;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    background-color: #f9f9f9;
+
+  nav ul li a {
+    font-size: 1rem;
   }
 
-  #show-more-results {
-    background-color: #007bff;
-    color: white;
-    padding: 0.8rem 1.5rem;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 1rem;
-    transition: background-color 0.3s ease;
-  }
-  
-  #show-more-results:hover {
-    background-color: #0056b3;
+  .players-grid {
+    grid-template-columns: 1fr;
   }
 
-  footer {
-    background-color: #202020;
-    color: white;
-    text-align: center;
-    padding: 1rem;
-    position: relative;
-    bottom: 0;
-    width: 100%;
+  .container {
+    margin: 1rem;
+    padding: 0 0.5rem;
   }
-
-  @media (max-width: 768px) {
-    header h1 {
-      font-size: 1.8rem;
-    }
-
-    nav ul {
-      flex-direction: column;
-      text-align: center;
-      gap: 1rem;
-    }
-
-    nav ul li a {
-      font-size: 1rem;
-    }
-
-    .players-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .container {
-      margin: 1rem;
-      padding: 0 0.5rem;
-    }
-  }
+}
