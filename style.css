@@ -86,7 +86,7 @@ section h2 {
 
 .tab-button {
   padding: 0.5rem 1rem;
-  background-color: #e0e0e0;
+  background-color: #777676;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -282,6 +282,24 @@ section h2 {
 
 .match-result:hover .match-description {
   display: block; /* Pokazanie opisu po najechaniu */
+}
+
+
+/* Przyciski "Głosuj" i "Więcej" */
+button {
+  background-color: var(--highlight);
+  color: var(--text-light);
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+/* Efekt po najechaniu */
+button:hover {
+  background-color: var(--highlight-hover);
 }
 
 /* Social Media */
